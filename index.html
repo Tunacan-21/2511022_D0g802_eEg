@@ -41,7 +41,7 @@
     .small-label {
       font-size: .85rem;
       color: #6b7178;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .row {
       display: grid;
@@ -53,41 +53,18 @@
     }
     .row:first-of-type { border-top: 0; }
     .label { color: #6b7178; font-size: .92rem; }
-    .email {
-      word-break: break-all;
-    }
-    .en-section {
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(0,0,0,0.1);
-      font-size: .95rem;
-    }
+    .email { word-break: break-all; }
   </style>
 </head>
 <body>
   <main class="card" role="main" aria-label="連絡先">
+    <p class="small-label">Contact Address</p>
     <div class="small-label">Natsuna Ishida</div>
     <h1>石田　夏菜</h1>
-    <p class="subtitle">連絡先 <span style="font-size:0.85rem; color:#6b7178;">(Contact Address)</span></p>
-
     <div class="row">
-      <div class="label">メール</div>
-      <div class="email" id="email-text">ishida.natsuna.ip2@naist.ac.jp</div>
-    </div>
-
-    <div class="en-section">
-      <div class="small-label">Natsuna Ishida</div>
-      <h2 style="margin:0 0 6px;font-size:1.25rem;">石田　夏菜</h2>
-      <p class="subtitle">Contact Address</p>
-      <div class="row">
-        <div class="label">Email</div>
-        <div class="email" id="email-text-en">ishida.natsuna.ip2@naist.ac.jp</div>
-      </div>
+      <div class="label">メール / Email</div>
+      <div class="email">ishida.natsuna.ip2@naist.ac.jp</div>
     </div>
   </main>
-
-  <script>
-    // もし将来動的処理が必要になったらここに追加
-  </script>
 </body>
 </html>
