@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>連絡先 | 石田　夏菜 Natsuna Ishida</title>
+  <title>連絡先 | 石田　夏菜</title>
   <meta name="description" content="石田 夏菜の連絡先（メールアドレス）" />
   <style>
     :root {
@@ -48,31 +48,35 @@
     }
     .row:first-of-type { border-top: 0; }
     .label { color: #6b7178; font-size: .92rem; }
-    a {
-      color: #2b66f6;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
     .email {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       word-break: break-all;
     }
-    .badge {
-      display: inline-block;
-      font-size: .78rem;
+    .copy-btn {
       padding: 4px 10px;
       border-radius: 999px;
-      background: #eef2ff;
       border: 1px solid #dbe3ff;
+      background: #eef2ff;
       color: #2749c9;
+      font-size: .78rem;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: #dbe3ff;
     }
     footer {
       margin-top: 16px;
       font-size: .78rem;
       color: #808690;
       text-align: right;
+    }
+    .en-section {
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(0,0,0,0.1);
+      font-size: .95rem;
     }
   </style>
 </head>
@@ -84,8 +88,20 @@
     <div class="row">
       <div class="label">メール</div>
       <div class="email">
-        <a href="mailto:ishida.natsuna.ip2@naist.ac.jp">ishida.natsuna.ip2@naist.ac.jp</a>
-        <span class="badge">mailto</span>
+        <span id="email-text">ishida.natsuna.ip2@naist.ac.jp</span>
+        <button class="copy-btn" onclick="copyEmail()">コピー</button>
+      </div>
+    </div>
+
+    <div class="en-section">
+      <h2 style="margin:0 0 6px;font-size:1.25rem;">Natsuna Ishida</h2>
+      <p class="subtitle">Contact</p>
+      <div class="row">
+        <div class="label">Email</div>
+        <div class="email">
+          <span id="email-text-en">ishida.natsuna.ip2@naist.ac.jp</span>
+          <button class="copy-btn" onclick="copyEmail()">Copy</button>
+        </div>
       </div>
     </div>
 
@@ -95,7 +111,12 @@
   </main>
 
   <script>
-    // 年表示を自動更新
+    function copyEmail() {
+      const email = "ishida.natsuna.ip2@naist.ac.jp";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("メールアドレスをコピーしました: " + email);
+      });
+    }
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
