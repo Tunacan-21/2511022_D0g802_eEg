@@ -38,6 +38,11 @@
       color: #5b5f67;
       font-size: .95rem;
     }
+    .small-label {
+      font-size: .85rem;
+      color: #6b7178;
+      margin-bottom: 6px;
+    }
     .row {
       display: grid;
       grid-template-columns: 88px 1fr;
@@ -49,28 +54,7 @@
     .row:first-of-type { border-top: 0; }
     .label { color: #6b7178; font-size: .92rem; }
     .email {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
       word-break: break-all;
-    }
-    .copy-btn {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid #dbe3ff;
-      background: #eef2ff;
-      color: #2749c9;
-      font-size: .78rem;
-      cursor: pointer;
-    }
-    .copy-btn:hover {
-      background: #dbe3ff;
-    }
-    footer {
-      margin-top: 16px;
-      font-size: .78rem;
-      color: #808690;
-      text-align: right;
     }
     .en-section {
       margin-top: 24px;
@@ -82,42 +66,28 @@
 </head>
 <body>
   <main class="card" role="main" aria-label="連絡先">
+    <div class="small-label">Natsuna Ishida</div>
     <h1>石田　夏菜</h1>
-    <p class="subtitle">連絡先</p>
+    <p class="subtitle">連絡先 <span style="font-size:0.85rem; color:#6b7178;">(Contact Address)</span></p>
 
     <div class="row">
       <div class="label">メール</div>
-      <div class="email">
-        <span id="email-text">ishida.natsuna.ip2@naist.ac.jp</span>
-        <button class="copy-btn" onclick="copyEmail()">コピー</button>
-      </div>
+      <div class="email" id="email-text">ishida.natsuna.ip2@naist.ac.jp</div>
     </div>
 
     <div class="en-section">
-      <h2 style="margin:0 0 6px;font-size:1.25rem;">Natsuna Ishida</h2>
-      <p class="subtitle">Contact</p>
+      <div class="small-label">Natsuna Ishida</div>
+      <h2 style="margin:0 0 6px;font-size:1.25rem;">石田　夏菜</h2>
+      <p class="subtitle">Contact Address</p>
       <div class="row">
         <div class="label">Email</div>
-        <div class="email">
-          <span id="email-text-en">ishida.natsuna.ip2@naist.ac.jp</span>
-          <button class="copy-btn" onclick="copyEmail()">Copy</button>
-        </div>
+        <div class="email" id="email-text-en">ishida.natsuna.ip2@naist.ac.jp</div>
       </div>
     </div>
-
-    <footer>
-      &copy; <span id="y"></span> Ishida Natsuna
-    </footer>
   </main>
 
   <script>
-    function copyEmail() {
-      const email = "ishida.natsuna.ip2@naist.ac.jp";
-      navigator.clipboard.writeText(email).then(() => {
-        alert("メールアドレスをコピーしました: " + email);
-      });
-    }
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // もし将来動的処理が必要になったらここに追加
   </script>
 </body>
 </html>
